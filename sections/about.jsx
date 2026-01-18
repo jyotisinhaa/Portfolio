@@ -1,150 +1,137 @@
 "use client";
 import React, { Fragment, useState, useRef, useEffect } from "react";
 import Image from "next/image";
-import { FaBlackTie, FaUserCheck } from "react-icons/fa";
-import { ImLocation } from "react-icons/im";
-import { IoPerson } from "react-icons/io5";
-import { BsMenuAppFill } from "react-icons/bs";
 
 const About = () => {
   const [isAbout, setIsAbout] = useState(false);
+  const aboutRef = useRef(null);
+  const contentRef = useRef(null);
 
-  const aboutRef = useRef();
-  const profile2Ref = useRef();
-  const aboutInfoRef = useRef();
-
-  // Scroll Animation
   useEffect(() => {
     if (aboutRef.current) {
-      const getScreenWidth = () =>
-        window.innerWidth ||
-        document.documentElement.clientWidth ||
-        document.body.clientWidth;
-
       const aboutObserver = new IntersectionObserver(
-        ([aboutEntry]) => {
-          setIsAbout(aboutEntry.isIntersecting);
-        },
-        {
-          rootMargin: `${getScreenWidth() <= 700 ? "-100px" : "-300px"}`,
-        }
+        ([entry]) => setIsAbout(entry.isIntersecting),
+        { rootMargin: "-100px" },
       );
-
       aboutObserver.observe(aboutRef.current);
 
-      if (isAbout) {
-        profile2Ref.current.classList.add("slide-in");
-        aboutInfoRef.current.classList.add("slide-in");
-      } else {
-        profile2Ref.current.classList.remove("slide-in");
-        aboutInfoRef.current.classList.remove("slide-in");
+      if (contentRef.current) {
+        if (isAbout) {
+          contentRef.current.classList.add("slide-in");
+        } else {
+          contentRef.current.classList.remove("slide-in");
+        }
       }
+
+      return () => {
+        if (aboutRef.current) {
+          try {
+            aboutObserver.unobserve(aboutRef.current);
+          } catch (e) {}
+          aboutObserver.disconnect();
+        }
+      };
     }
-  }, [isAbout, aboutRef]);
+  }, [isAbout]);
 
   return (
     <Fragment>
       <section
-        className=' shadow-zinc-300 dark:shadow-zinc-700 shadow-sm overflow-x-hidden'
-        id='about'
+        id="about"
         ref={aboutRef}
+        className="relative px-6 pb-20 pt-20 bg-white dark:bg-gray-900 z-20"
       >
-        <h2 className='text-3xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3'>
-          <FaUserCheck /> About me
-        </h2>
-        <div className='pb-[30px] px-[20px] md:px-[100px] lg:px-[200px] md:flex gap-[50px]'>
-          {/* Person Image */}
-          <Image
-            alt='about image'
-            className={
-              "shadow-zinc-300 dark:shadow-zinc-700 shadow-sm transition-all duration-700 translate-x-[-900px] bg-blue-200 m-auto bg-cover bg-no-repeat max-h-[500px] rounded object-contain"
-            }
-            height={350}
-            ref={profile2Ref}
-            src='http://res.cloudinary.com/dqfrtazgi/image/upload/v1696181689/wt7sys9ubcvc41v6clq8.jpg'
-            width={350}
-          />
+        <div className="max-w-4xl mx-auto -mt-48">
+          {/* About Card */}
           <div
-            className='text-lg translate-x-[900px] opacity-0 transition-all duration-700 mt-4 md:mt-0 md:w-[50%] text-center md:text-left rounded'
-            ref={aboutInfoRef}
+            ref={contentRef}
+            className="transform transition-all duration-700 translate-y-20 opacity-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-lg p-8 md:p-12 shadow-2xl border border-blue-100 dark:border-gray-600"
+            style={{
+              transform: isAbout ? "translateY(-200px)" : "translateY(100px)",
+              opacity: isAbout ? 1 : 0,
+            }}
           >
-            {/* Full Name */}
-            <p className='text-3xl text-center md:text-left font-semibold text-[#c72c6c] dark:text-[#07d0e5]'>
-              Shivraj Gurjar
-            </p>
-            {/* Profil Name */}
-            <p className='text-center md:text-left text-red-600 mt-1'>
-              Ful stack web developer
-            </p>
-            {/* Location */}
-            <div className='flex flex-wrap justify-center md:justify-normal gap-5'>
-              <div className='w-fit px-4 py-2 mt-5 border border-gray-400 rounded flex flex-col items-center gap-2'>
-                <div className='flex gap-3 items-center'>
-                  <p className='text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]'>
-                    Location
-                  </p>
-                  <p>
-                    <ImLocation />
-                  </p>
-                </div>
-                <p className='text-center md:text-left text-[#0b0c0c] dark:text-[#07d0e5]'>
-                  Kota Rajasthan India{" "}
-                </p>
-              </div>
-              {/* Age */}
-              <div className='w-fit px-4 py-2 mt-5 border border-gray-400 rounded flex flex-col items-center gap-2'>
-                <div className='flex gap-3 items-center'>
-                  <p className='text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]'>
-                    Age
-                  </p>
-                  <p>
-                    <IoPerson />
-                  </p>
-                </div>
-                <p className='text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]'>
-                  20{" "}
-                </p>
-              </div>
-              {/* Experience */}
-              <div className='w-fit px-4 py-2 mt-5 border border-gray-400 rounded flex flex-col items-center gap-2'>
-                <div className='flex gap-3 items-center'>
-                  <p className='text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]'>
-                    Experience
-                  </p>
-                  <p>
-                    <FaBlackTie />
-                  </p>
-                </div>
-                <p className='text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]'>
-                  1 Year{" "}
-                </p>
-              </div>
-              {/* Project */}
-              <div className='w-fit px-4 py-2 mt-5 border border-gray-400 rounded flex flex-col items-center gap-2'>
-                <div className='flex gap-3 items-center'>
-                  <p className='text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]'>
-                    Projects
-                  </p>
-                  <p>
-                    <BsMenuAppFill />
-                  </p>
-                </div>
-                <p className='text-center md:text-left text-[#c72c6c] dark:text-[#07d0e5]'>
-                  3{" "}
-                </p>
-              </div>
-            </div>
+            <div className="flex flex-col md:flex-row gap-8 items-start md:items-center">
+              {/* Left: Text Content */}
+              <div className="flex-1">
+                <h2 className="text-4xl font-bold mb-6 text-gray-900 dark:text-white">
+                  About Me
+                </h2>
 
-            <div className='mt-5 justify-evenly text-justify'>
-              <p className='text-gray-600 dark:text-gray-300'>
-                Passionate and driven ReactJS developer with a strong foundation
-                in MERN Stack and NextJS. Dedicated to creating dynamic and
-                user-centric web applications. Eager to contribute my expertise
-                in frontend frameworks, modern UI/UX design, and responsive
-                development to a forward-thinking team, while continuously
-                learning and growing in the ever-evolving world of web
-                development.
-              </p>
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                  I'm a backend and platform engineer focused on building
+                  systems that scale cleanly and operate reliably in production.
+                  I enjoy working on problems where performance, correctness,
+                  and long-term maintainability matter as much as shipping
+                  features.
+                </p>
+
+                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  My work is centered around designing backend services and data
+                  platforms that support large workloads and evolving product
+                  needs. I spend a lot of time thinking about system boundaries,
+                  failure modes, and operational simplicity—how services
+                  communicate, how data flows, and how platforms can grow
+                  without becoming fragile or expensive to run.
+                </p>
+
+                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  I'm particularly interested in platform engineering and
+                  infrastructure-aware backend design. I like building shared
+                  services and internal foundations that make other teams more
+                  productive, whether that's improving latency and throughput,
+                  introducing better observability, or enabling new capabilities
+                  like AI-driven features in a way that fits naturally into
+                  existing systems.
+                </p>
+
+                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  With a strong background in computer science and applied AI, I
+                  enjoy bridging theory with real-world constraints. I value
+                  clear abstractions, pragmatic trade-offs, and engineering
+                  decisions backed by data rather than assumptions.
+                </p>
+
+                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  I'm motivated by high engineering standards, thoughtful system
+                  design, and teams that take ownership of the platforms they
+                  build.
+                </p>
+
+                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                  Let’s connect if you’re passionate about tech, big ideas, or
+                  just great coffee!
+                </p>
+
+                <div className="flex gap-4">
+                  <a
+                    href="#getInTouch"
+                    className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
+                  >
+                    Get in Touch
+                  </a>
+                  <a
+                    href="https://drive.google.com/file/d/1uk-tv12y8PK-WrE4oX2xRtmSy4PUVSsE/view"
+                    target="_blank"
+                    className="px-6 py-2 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-gray-700 transition"
+                  >
+                    View CV
+                  </a>
+                </div>
+              </div>
+
+              {/* Right: Circular Photo */}
+              <div className="flex-shrink-0">
+                <div className="w-48 h-48 md:w-64 md:h-64 relative">
+                  <Image
+                    src="/images/MyPhoto.jpeg"
+                    alt="Jyoti Sinha"
+                    fill
+                    priority
+                    className="rounded-full object-cover shadow-lg border-4 border-blue-200 dark:border-gray-600"
+                  />
+                </div>
+              </div>
             </div>
           </div>
         </div>

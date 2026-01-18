@@ -1,20 +1,38 @@
 export const ExperienceData = [
   {
-    companyName: "Good Tech MIND",
-    location: "Kolkata, India",
-    role: "MERN STACK INTERN",
-    fromTo: "Aprile 2023 - June 2023",
+    companyName: "SS&C Technologies",
+    location: "San Francisco, California, USA",
+    role: "Software Engineer",
+    fromTo: "May 2022 – Current",
     description:
-      "In this internship, I worked on many projects, including an eCommerce application and a real-time chat system. Through this internship, I gained a strong command of Redux and Redux Toolkit. After completing this internship, I have gained the confidence and skills needed to develop a full-stack application for a real-world eCommerce site.",
+      "At SS&C, I design and operate AI-integrated backend platforms and high-performance microservices for enterprise clients. I focus on creating scalable, reliable systems that make complex workflows seamless and reduce operational overhead. My work spans distributed services, data pipelines, and AI-driven features, where I take ownership end-to-end—from system design to deployment and monitoring. Collaborating closely with cross-functional teams, I aim to deliver platforms that are maintainable, efficient, and impactful, helping teams ship faster while maintaining high standards. This role has strengthened my skills in platform architecture, problem-solving at scale, and engineering leadership.",
     side: "left",
   },
   {
-    companyName: "MILLENNIA AHEAD TECHNOLIOIES",
-    location: "Nagpur, India",
-    role: "REACT JS INTERN",
-    fromTo: "December 2022 - March 2023",
+    companyName: "BDIPLUS",
+    location: "New York, USA",
+    role: "Software Engineer",
+    fromTo: "Mar 2022 – May 2022",
     description:
-      "During this internship, we worked for a startup company to build an online salon appointment booking platform. In my first internship, I learned about version control tools like Git and GitHub. I spent a lot of time improving my skills in building UI and UX to advance my proficiency in CSS styling and JavaScript logic.",
+      "I contributed to full-stack applications that focused on usability, reliability, and smooth integration between front-end and backend services. This experience deepened my understanding of user-focused development and how to balance feature delivery with code maintainability. I collaborated closely with designers and product managers to ensure that the solutions were both technically robust and aligned with user needs. The role helped me grow as an engineer capable of bridging product vision and backend execution.",
+    side: "right",
+  },
+  {
+    companyName: "BDIPLUS",
+    location: "New York, USA",
+    role: "Data Engineer Intern",
+    fromTo: "May 2021 – Dec 2021",
+    description:
+      "During this internship, I worked on data engineering pipelines for large-scale datasets, learning how to process, clean, and maintain data efficiently. Beyond technical skills, I developed an understanding of data reliability, pipeline efficiency, and the importance of accurate data for decision-making. This experience laid the foundation for my ability to design systems that handle high-volume, real-world data and taught me to approach problems with both technical rigor and practical impact.",
+    side: "left",
+  },
+  {
+    companyName: "University at Buffalo",
+    location: "Buffalo, New York, USA",
+    role: "Graduate Research Intern",
+    fromTo: "Fall 2020 – Fall 2021",
+    description:
+      "I conducted research on biometric authentication systems, building web apps to collect and analyze large-scale user data. The role combined technical development with research methodology, teaching me to translate complex datasets into actionable insights. Through machine learning, statistical analysis, and cloud deployment, I gained experience in creating systems that are both user-aware and technically sound. This research helped me understand the intersection of AI, usability, and real-world impact, shaping how I approach building responsible systems today.",
     side: "right",
   },
 ];
