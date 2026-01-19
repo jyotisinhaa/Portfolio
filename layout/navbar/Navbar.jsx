@@ -43,7 +43,7 @@ const Navbar = () => {
     <Fragment>
       {/* Desktop Header */}
       <div
-        className="w-full h-[70px] px-8 bg-[rgba(255,255,255,0.8)] dark:bg-[rgba(0,0,0,0.8)] backdrop-filter backdrop-blur-lg hidden md:flex justify-between items-center gap-4 shadow-sm shadow-gray-300 dark:shadow-gray-800 fixed z-10 transition-all duration-500"
+        className="w-full h-[70px] px-8 bg-[rgba(255,255,255,0.8)] dark:bg-[rgba(0,0,0,0.8)] backdrop-filter backdrop-blur-lg hidden md:flex justify-between items-center gap-4 shadow-sm shadow-gray-300 dark:shadow-gray-800 fixed z-50 transition-all duration-500"
         style={{ top: top }}
       >
         {/* Name Logo */}
@@ -53,15 +53,15 @@ const Navbar = () => {
         <div className="h-full flex gap-4">
           {/* Navbar Links */}
           {NavbarMenu.map((navbar) => (
-            <Link
-              className={"text-[#c72c6c] dark:text-[#07d0e5] font-semibold"}
+            <a
               href={navbar.link}
               key={navbar.name}
+              className={
+                "text-[#c72c6c] dark:text-[#07d0e5] font-semibold h-full pb-1 hover:pb-0 px-2 flex items-center hover:border-b-4  border-[#c72c6c] dark:border-[#07d0e5] transition-all"
+              }
             >
-              <div className="h-full pb-1 hover:pb-0 px-2 flex items-center hover:border-b-4  border-[#c72c6c] dark:border-[#07d0e5] transition-all">
-                {navbar.name}
-              </div>
-            </Link>
+              {navbar.name}
+            </a>
           ))}
         </div>
         {/* Toggle Theme button */}

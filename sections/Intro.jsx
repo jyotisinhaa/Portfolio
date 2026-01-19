@@ -50,7 +50,7 @@ const Intro = () => {
         <title>Jyoti&apos;s Portfolio</title>
       </Head>
 
-      <section id="home">
+      <section id="home" className="scroll-mt-20 md:scroll-mt-[80px]">
         <div
           className="min-h-screen w-full relative flex items-center"
           ref={homeRef}

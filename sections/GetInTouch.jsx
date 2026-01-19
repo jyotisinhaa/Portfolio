@@ -27,7 +27,7 @@ const GetInTouch = () => {
   ];
 
   return (
-    <section className="py-16 px-4 bg-white dark:bg-[#1a1a1a]">
+    <section id="contact" className="py-16 px-4 bg-white dark:bg-[#1a1a1a]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 flex justify-center items-center gap-3">

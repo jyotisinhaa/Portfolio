@@ -10,7 +10,7 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
       <div
         className={`w-full h-screen bg-[rgba(255,255,255,0.3)] dark:bg-[rgba(0,0,0,0.3)] fixed ${
           showMenu ? null : "hidden"
-        } top-0 left-0 z-10`}
+        } top-0 left-0 z-40`}
         onClick={() => setShowMenu(!showMenu)}
       >
         {/* Sidebar */}
@@ -42,13 +42,14 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
           <div className="p-2 flex flex-col gap-2">
             {/* Navbar Links */}
             {NavbarMenu.map((navbar) => (
-              <Link
+              <a
                 className="text-lg p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 rounded"
                 href={navbar.link}
                 key={navbar.name}
+                onClick={() => setShowMenu(false)}
               >
                 {navbar.name}
-              </Link>
+              </a>
             ))}
           </div>
         </div>
