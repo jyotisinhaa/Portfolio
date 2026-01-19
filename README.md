@@ -1,4 +1,4 @@
-# Jyoti Sinha's Portfolio
+# Portfolio
 
 A modern, responsive portfolio showcasing professional experience and technical expertise in backend and platform engineering.
 
@@ -28,7 +28,7 @@ A modern, responsive portfolio showcasing professional experience and technical 
 1. **Clone the repository:**
 
 ```sh
-git clone https://github.com/jyotisinhaa/portfolio.git
+git clone <your-repo-url>
 cd portfolio
 ```
 
@@ -47,12 +47,4 @@ npm run dev
 4. **Open in browser:**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## Contact
-
-- LinkedIn: [Jyoti Sinha](https://www.linkedin.com/in/jyoti-sinha20)
-- GitHub: [@jyotisinhaa](https://github.com/jyotisinhaa)
-- Email: jyotisinhacse21@gmail.com
-
 ---
-
-**Built with ❤️ by Jyoti Sinha**
