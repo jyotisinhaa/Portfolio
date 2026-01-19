@@ -36,13 +36,17 @@ const Project = () => {
 
   return (
     <Fragment>
-      <section id="project" ref={projectRef}>
+      <section
+        id="project"
+        ref={projectRef}
+        className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800"
+      >
         <h2 className="text-4xl md:text-5xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3 text-gray-900 dark:text-white">
           <CgWebsite size={40} className="text-blue-600" /> Projects
         </h2>
 
         <div
-          className="min-h-[300px] pop-down-child pb-[30px] flex flex-col gap-8 items-center px-[20px] shadow-sm shadow-zinc-300 dark:shadow-zinc-700"
+          className="min-h-[300px] pop-down-child pb-[30px] flex flex-col gap-8 items-center px-[20px]"
           ref={projectBoxesRef}
         >
           {ProjectsData.map((project) => (

@@ -33,11 +33,7 @@ const Experience = () => {
 
   return (
     <Fragment>
-      <section
-        id="experience"
-        ref={expeRef}
-        className="py-12 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800"
-      >
+      <section id="experience" ref={expeRef} className="py-12 bg-[#0A0A0A]">
         <h2 className="text-4xl md:text-5xl font-bold text-center p-6 flex justify-center items-center gap-3 text-gray-900 dark:text-white">
           <MdWork size={40} className="text-blue-600" /> Experience
         </h2>

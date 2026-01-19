@@ -39,7 +39,7 @@ const About = () => {
       <section
         id="about"
         ref={aboutRef}
-        className="relative px-6 pb-20 pt-20 bg-white dark:bg-gray-900 z-20"
+        className="relative px-6 pb-20 pt-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 z-20"
       >
         <div className="max-w-4xl mx-auto -mt-48">
           {/* About Card */}
