@@ -46,7 +46,9 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
                 className="text-lg p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 rounded"
                 href={navbar.link}
                 key={navbar.name}
-                onClick={() => setShowMenu(false)}
+                target={navbar.external ? "_blank" : undefined}
+                rel={navbar.external ? "noopener noreferrer" : undefined}
+                onClick={() => !navbar.external && setShowMenu(false)}
               >
                 {navbar.name}
               </a>

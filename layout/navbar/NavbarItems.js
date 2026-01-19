@@ -8,6 +8,11 @@ export const NavbarMenu = [
     link: "#about",
   },
   {
+    name: "CV",
+    link: "/images/resume.pdf",
+    external: true,
+  },
+  {
     name: "Tech Stack",
     link: "#techStack",
   },

@@ -56,6 +56,8 @@ const Navbar = () => {
             <a
               href={navbar.link}
               key={navbar.name}
+              target={navbar.external ? "_blank" : undefined}
+              rel={navbar.external ? "noopener noreferrer" : undefined}
               className={
                 "text-[#c72c6c] dark:text-[#07d0e5] font-semibold h-full pb-1 hover:pb-0 px-2 flex items-center hover:border-b-4  border-[#c72c6c] dark:border-[#07d0e5] transition-all"
               }
