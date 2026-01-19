@@ -1,7 +1,6 @@
 import React, { Fragment } from "react";
 import Link from "next/link";
 import { IoMdClose } from "react-icons/io";
-import { DiTechcrunch } from "react-icons/di";
 
 import { NavbarMenu } from "./NavbarItems";
 
@@ -20,31 +19,31 @@ const MobileNavbar = ({ showMenu, setShowMenu }) => {
             showMenu ? null : "translate-x-[-450px]"
           } transition-all duration-1000`}
         >
-          <div className='p-3 bg-gray-200 dark:bg-gray-800 flex justify-between items-center gap-3'>
+          <div className="p-3 bg-gray-200 dark:bg-gray-800 flex justify-between items-center gap-3">
             {/* Name Logo */}
-            <div className='flex items-center gap-2'>
-              <div className='text-white w-8 h-8 bg-[#c72c6c] dark:bg-[#07d0e5] rounded-full flex justify-center items-center'>
-                S
+            <div className="flex items-center gap-2">
+              <div className="text-white w-8 h-8 bg-[#c72c6c] dark:bg-[#07d0e5] rounded-full flex justify-center items-center">
+                JS
               </div>
-              <p className='text-gray-400 flex'>
-                <span className='text-lg font-bold'>SHIV</span> <DiTechcrunch />
+              <p className="text-gray-400 flex items-center gap-1">
+                <span className="text-lg font-bold">Jyoti Sinha</span>
               </p>
             </div>
 
             {/* Sidebar Close button */}
             <button
-              className='text-black dark:text-white text-3xl font-bold'
+              className="text-black dark:text-white text-3xl font-bold"
               onClick={() => setShowMenu(!showMenu)}
             >
               <IoMdClose />
             </button>
           </div>
 
-          <div className='p-2 flex flex-col gap-2'>
+          <div className="p-2 flex flex-col gap-2">
             {/* Navbar Links */}
             {NavbarMenu.map((navbar) => (
               <Link
-                className='text-lg p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 rounded'
+                className="text-lg p-2 bg-gray-200 hover:bg-gray-300 dark:bg-gray-600 dark:hover:bg-gray-700 rounded"
                 href={navbar.link}
                 key={navbar.name}
               >
