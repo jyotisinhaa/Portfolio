@@ -1,5 +1,6 @@
 import { BsGithub } from "react-icons/bs";
 import { FaLinkedinIn } from "react-icons/fa";
+import { MdEmail } from "react-icons/md";
 
 export const SocialMediaData = [
   {
@@ -11,5 +12,10 @@ export const SocialMediaData = [
     icon: <BsGithub />,
     color: "#171515",
     link: "https://github.com/jyotisinhaa",
+  },
+  {
+    icon: <MdEmail />,
+    color: "#D14836",
+    link: "mailto:jyotisinhacse21@gmail.com",
   },
 ];
