@@ -10,11 +10,9 @@ const Footer = dynamic(() => import("@/layout/footer/Footer"));
 const Intro = dynamic(() => import("@/sections/Intro"));
 const Skills = dynamic(() => import("@/sections/Skills"));
 const Projects = dynamic(() => import("@/sections/Projects"));
-const Apps = dynamic(() => import("@/sections/Apps"));
 const SendMail = dynamic(() => import("@/utils/SendMail"));
 const SocialMedia = dynamic(() => import("@/utils/SocialMedia"));
 const ChatSystem = dynamic(() => import("@/utils/ChatSystem"));
-const Feedback = dynamic(() => import("@/utils/Feedback"));
 
 const Home = () => {
   return (
@@ -93,8 +91,6 @@ const Home = () => {
           <Projects />
           {/* SocialMedia */}
           <SocialMedia />
-          {/* Apps */}
-          <Apps />
           {/* Send Mail */}
           <SendMail />
           {/* Footer */}
@@ -103,8 +99,6 @@ const Home = () => {
             {/* tawk.to Chat System */}
             <ChatSystem />
           </div>
-          {/* Feedback Modal */}
-          <Feedback />
         </div>
       </div>
     </Fragment>
