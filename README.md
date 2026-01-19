@@ -28,7 +28,7 @@ A modern, responsive portfolio showcasing professional experience and technical 
 1. **Clone the repository:**
 
 ```sh
-git clone <your-repo-url>
+git clone <repo-url>
 cd portfolio
 ```
 

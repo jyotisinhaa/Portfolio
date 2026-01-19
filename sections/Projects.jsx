@@ -42,82 +42,52 @@ const Project = () => {
         </h2>
 
         <div
-          className="min-h-[400px] pop-down-child pb-[30px] flex flex-wrap px-[20px] gap-8 justify-around items-center shadow-sm shadow-zinc-300 dark:shadow-zinc-700"
+          className="min-h-[300px] pop-down-child pb-[30px] flex flex-col gap-8 items-center px-[20px] shadow-sm shadow-zinc-300 dark:shadow-zinc-700"
           ref={projectBoxesRef}
         >
           {ProjectsData.map((project) => (
             <div
-              className="transition-all duration-700 w-[330px]"
+              className="w-full max-w-3xl flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-2xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-gray-100 dark:border-gray-800"
               key={project.projectName}
             >
               {/* Project Image */}
-              <div
-                className={
-                  "w-[330px] shadow-md shadow-zinc-300 dark:shadow-zinc-700 h-48 bg-no-repeat flex flex-col justify-end rounded overflow-hidden bg-cover"
-                }
-                onMouseLeave={() => setHeight1("")}
-                onMouseMove={() => setHeight1(project.projectName)}
-                style={{
-                  backgroundImage: `url(${
-                    project?.projectImage?.imageUrl || ""
-                  })`,
-                }}
-              >
-                <div
-                  className="bg-red-600 p-1 cursor-pointer"
-                  onMouseLeave={() => setHeight1("")}
-                  onMouseMove={() => setHeight1(project.projectName)}
-                >
-                  {/* Project Name */}
-                  <p
-                    className="text-white text-center"
-                    onClick={() =>
-                      setHeight1(height1 === "" ? project.projectName : "")
-                    }
-                  >
-                    {project.projectName}
-                  </p>
-                  <div
-                    className="overflow-hidden transition-all duration-500 h-[70px] flex gap-10 justify-center items-center"
-                    style={
-                      height1 === project.projectName
-                        ? { maxHeight: "200px" }
-                        : { maxHeight: "0" }
-                    }
-                  >
-                    {/* GitHub Link */}
-                    {project.liveUrl && (
-                      <Link
-                        className="text-xl text-white p-1 bg-gray-700 hover:bg-gray-950 rounded"
-                        href={project.liveUrl}
-                        target="_blank"
-                      >
-                        <HiExternalLink />
-                      </Link>
-                    )}
-                    {/* Live url */}
-                    {project.githubUrl && (
-                      <Link
-                        className="text-xl text-white p-1 bg-gray-700 hover:bg-gray-950 rounded"
-                        href={project.githubUrl}
-                        target="_blank"
-                      >
-                        <BsGithub />
-                      </Link>
-                    )}
-                  </div>
-                </div>
+              <div className="md:w-2/5 w-full h-56 md:h-auto flex-shrink-0">
+                <img
+                  src={project?.projectImage?.imageUrl || ""}
+                  alt={project.projectName}
+                  className="object-cover w-full h-full"
+                />
               </div>
-              {/* Tech Stack */}
-              <div className="flex flex-wrap gap-2 mt-4">
-                {project.techs.map((tech) => (
-                  <p
-                    className="px-1 text-sm rounded bg-blue-500 text-white"
-                    key={tech}
-                  >
-                    {tech}
-                  </p>
-                ))}
+              {/* Project Info */}
+              <div className="flex flex-col justify-center p-6 md:w-3/5 w-full">
+                <h3 className="text-2xl md:text-3xl font-bold text-gray-800 dark:text-white mb-2">
+                  {project.projectName}
+                </h3>
+                <p className="text-gray-600 dark:text-gray-300 mb-6 line-clamp-2">
+                  {project.description.split("\n")[0]}
+                </p>
+                <div className="flex gap-4">
+                  {project.liveUrl && (
+                    <a
+                      href={project.liveUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2 rounded-lg bg-pink-600 text-white font-semibold shadow hover:bg-pink-700 transition"
+                    >
+                      Try it Now
+                    </a>
+                  )}
+                  {project.githubUrl && (
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="px-5 py-2 rounded-lg bg-gray-200 dark:bg-gray-800 text-gray-800 dark:text-white font-semibold shadow hover:bg-gray-300 dark:hover:bg-gray-700 transition flex items-center gap-2"
+                    >
+                      <BsGithub /> View on GitHub
+                    </a>
+                  )}
+                </div>
               </div>
             </div>
           ))}
