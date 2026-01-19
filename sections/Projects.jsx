@@ -21,7 +21,7 @@ const Project = () => {
         },
         {
           rootMargin: "-100px",
-        }
+        },
       );
 
       projectsObserver.observe(projectRef.current);
@@ -36,18 +36,18 @@ const Project = () => {
 
   return (
     <Fragment>
-      <section id='project' ref={projectRef}>
-        <h2 className='text-3xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3'>
-          <CgWebsite /> Projects
+      <section id="project" ref={projectRef}>
+        <h2 className="text-4xl md:text-5xl font-bold text-center pt-4 pb-8 flex justify-center items-center gap-3 text-gray-900 dark:text-white">
+          <CgWebsite size={40} className="text-blue-600" /> Projects
         </h2>
 
         <div
-          className='min-h-[400px] pop-down-child pb-[30px] flex flex-wrap px-[20px] gap-8 justify-around items-center shadow-sm shadow-zinc-300 dark:shadow-zinc-700'
+          className="min-h-[400px] pop-down-child pb-[30px] flex flex-wrap px-[20px] gap-8 justify-around items-center shadow-sm shadow-zinc-300 dark:shadow-zinc-700"
           ref={projectBoxesRef}
         >
           {ProjectsData.map((project) => (
             <div
-              className='transition-all duration-700 w-[330px]'
+              className="transition-all duration-700 w-[330px]"
               key={project.projectName}
             >
               {/* Project Image */}
@@ -64,13 +64,13 @@ const Project = () => {
                 }}
               >
                 <div
-                  className='bg-red-600 p-1 cursor-pointer'
+                  className="bg-red-600 p-1 cursor-pointer"
                   onMouseLeave={() => setHeight1("")}
                   onMouseMove={() => setHeight1(project.projectName)}
                 >
                   {/* Project Name */}
                   <p
-                    className='text-white text-center'
+                    className="text-white text-center"
                     onClick={() =>
                       setHeight1(height1 === "" ? project.projectName : "")
                     }
@@ -78,7 +78,7 @@ const Project = () => {
                     {project.projectName}
                   </p>
                   <div
-                    className='overflow-hidden transition-all duration-500 h-[70px] flex gap-10 justify-center items-center'
+                    className="overflow-hidden transition-all duration-500 h-[70px] flex gap-10 justify-center items-center"
                     style={
                       height1 === project.projectName
                         ? { maxHeight: "200px" }
@@ -88,9 +88,9 @@ const Project = () => {
                     {/* GitHub Link */}
                     {project.liveUrl && (
                       <Link
-                        className='text-xl text-white p-1 bg-gray-700 hover:bg-gray-950 rounded'
+                        className="text-xl text-white p-1 bg-gray-700 hover:bg-gray-950 rounded"
                         href={project.liveUrl}
-                        target='_blank'
+                        target="_blank"
                       >
                         <HiExternalLink />
                       </Link>
@@ -98,9 +98,9 @@ const Project = () => {
                     {/* Live url */}
                     {project.githubUrl && (
                       <Link
-                        className='text-xl text-white p-1 bg-gray-700 hover:bg-gray-950 rounded'
+                        className="text-xl text-white p-1 bg-gray-700 hover:bg-gray-950 rounded"
                         href={project.githubUrl}
-                        target='_blank'
+                        target="_blank"
                       >
                         <BsGithub />
                       </Link>
@@ -109,10 +109,10 @@ const Project = () => {
                 </div>
               </div>
               {/* Tech Stack */}
-              <div className='flex flex-wrap gap-2 mt-4'>
+              <div className="flex flex-wrap gap-2 mt-4">
                 {project.techs.map((tech) => (
                   <p
-                    className='px-1 text-sm rounded bg-blue-500 text-white'
+                    className="px-1 text-sm rounded bg-blue-500 text-white"
                     key={tech}
                   >
                     {tech}
