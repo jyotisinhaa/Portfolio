@@ -30,7 +30,7 @@ const GetInTouch = () => {
     <section id="contact" className="py-16 px-4 bg-[#0A0A0A]">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-3 flex justify-center items-center gap-3">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-3 flex justify-center items-center gap-3">
             <MdContactMail size={40} className="text-blue-600" />
             Get in Touch
           </h2>

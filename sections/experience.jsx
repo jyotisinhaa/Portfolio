@@ -34,7 +34,7 @@ const Experience = () => {
   return (
     <Fragment>
       <section id="experience" ref={expeRef} className="py-12 bg-[#0A0A0A]">
-        <h2 className="text-4xl md:text-5xl font-bold text-center p-6 flex justify-center items-center gap-3 text-gray-900 dark:text-white">
+        <h2 className="text-4xl md:text-5xl font-bold text-center p-6 flex justify-center items-center gap-3 text-white">
           <MdWork size={40} className="text-blue-600" /> Experience
         </h2>
         <div className="w-16 h-1 bg-gradient-to-r from-blue-500 to-indigo-600 mx-auto rounded-full mb-8"></div>
@@ -91,7 +91,7 @@ const Experience = () => {
                   </p>
                 </div>
                 <button
-                  className="transition-all duration-500 hidden md:block"
+                  className="transition-all duration-500 hidden md:block text-white"
                   onClick={() =>
                     setDesc(
                       desc === experience.description
@@ -114,7 +114,7 @@ const Experience = () => {
                 key={experience.companyName}
               >
                 <button
-                  className="hidden md:block"
+                  className="hidden md:block text-white"
                   onClick={() =>
                     setDesc(
                       desc === experience.description
