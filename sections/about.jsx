@@ -102,22 +102,6 @@ const About = () => {
                   Let’s connect if you’re passionate about tech, big ideas, or
                   just great coffee!
                 </p>
-
-                <div className="flex gap-4">
-                  <a
-                    href="#getInTouch"
-                    className="px-6 py-2 bg-blue-600 text-white rounded-lg font-semibold hover:bg-blue-700 transition"
-                  >
-                    Get in Touch
-                  </a>
-                  <a
-                    href="https://drive.google.com/file/d/1uk-tv12y8PK-WrE4oX2xRtmSy4PUVSsE/view"
-                    target="_blank"
-                    className="px-6 py-2 border-2 border-blue-600 text-blue-600 dark:text-blue-400 rounded-lg font-semibold hover:bg-blue-50 dark:hover:bg-gray-700 transition"
-                  >
-                    View CV
-                  </a>
-                </div>
               </div>
 
               {/* Right: Circular Photo */}
