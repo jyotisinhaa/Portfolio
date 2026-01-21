@@ -108,7 +108,7 @@ const About = () => {
               <div className="flex-shrink-0">
                 <div className="w-48 h-48 md:w-64 md:h-64 relative">
                   <Image
-                    src="/images/MyPhoto.jpeg"
+                    src="/images/my-photo-small.jpg"
                     alt="Jyoti Sinha"
                     fill
                     priority
