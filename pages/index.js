@@ -33,28 +33,13 @@ const Home = () => {
           content="Explore the best Next.js and React.js portfolio by Jyoti. Featuring simple, dark and light theme designs and mobile responsiveness."
           property="og:description"
         />
-        <meta
-          content="https://shiv-s-portfolio.vercel.app/images/welcome-screen.png"
-          property="og:image"
-        />
 
         {/* <!-- Twitter --> */}
-        <meta
-          content="https://shiv-s-portfolio.vercel.app/images/welcome-screen.png"
-          property="twitter:card"
-        />
-        <meta
-          content="https://shiv-s-portfolio.vercel.app"
-          property="twitter:url"
-        />
+        <meta content="summary" property="twitter:card" />
         <meta content="Jyoti - Portfolio" property="twitter:title" />
         <meta
           content="Explore the best Next.js and React.js portfolio by Jyoti. Featuring simple, dark and light theme designs and mobile responsiveness."
           property="twitter:description"
-        />
-        <meta
-          content="https://shiv-s-portfolio.vercel.app/images/welcome-screen.png"
-          property="twitter:image"
         />
 
         {/* <!-- Other Meta Tags --> */}
@@ -64,13 +49,6 @@ const Home = () => {
         />
         <meta content="Jyoti" name="author" />
         <meta content="width=device-width, initial-scale=1.0" name="viewport" />
-
-        {/* <!-- Favicon --> */}
-        <link
-          href="https://shiv-s-portfolio.vercel.app/favicon.ico"
-          rel="icon"
-          type="image/x-icon"
-        />
       </Head>
       <div>
         <div>
