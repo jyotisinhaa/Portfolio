@@ -41,13 +41,13 @@ const About = () => {
         ref={aboutRef}
         className="relative px-6 pb-20 pt-20 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-900 dark:to-gray-800 z-20"
       >
-        <div className="max-w-4xl mx-auto -mt-48">
+        <div className="max-w-4xl mx-auto -mt-32">
           {/* About Card */}
           <div
             ref={contentRef}
             className="transform transition-all duration-700 translate-y-20 opacity-0 bg-gradient-to-br from-blue-50 to-indigo-50 dark:from-gray-800 dark:to-gray-700 rounded-lg p-8 md:p-12 shadow-2xl border border-blue-100 dark:border-gray-600"
             style={{
-              transform: isAbout ? "translateY(-200px)" : "translateY(100px)",
+              transform: isAbout ? "translateY(-150px)" : "translateY(100px)",
               opacity: isAbout ? 1 : 0,
             }}
           >
@@ -58,7 +58,7 @@ const About = () => {
                   About Me
                 </h2>
 
-                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-6 text-left">
                   I'm a backend and platform engineer focused on building
                   systems that scale cleanly and operate reliably in production.
                   I enjoy working on problems where performance, correctness,
@@ -66,7 +66,7 @@ const About = () => {
                   features.
                 </p>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-700 dark:text-gray-300 mb-6 text-left">
                   My work is centered around designing backend services and data
                   platforms that support large workloads and evolving product
                   needs. I spend a lot of time thinking about system boundaries,
@@ -75,7 +75,7 @@ const About = () => {
                   without becoming fragile or expensive to run.
                 </p>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-700 dark:text-gray-300 mb-6 text-left">
                   I'm particularly interested in platform engineering and
                   infrastructure-aware backend design. I like building shared
                   services and internal foundations that make other teams more
@@ -85,20 +85,20 @@ const About = () => {
                   existing systems.
                 </p>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-700 dark:text-gray-300 mb-6 text-left">
                   With a strong background in computer science and applied AI, I
                   enjoy bridging theory with real-world constraints. I value
                   clear abstractions, pragmatic trade-offs, and engineering
                   decisions backed by data rather than assumptions.
                 </p>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-700 dark:text-gray-300 mb-6 text-left">
                   I'm motivated by high engineering standards, thoughtful system
                   design, and teams that take ownership of the platforms they
                   build.
                 </p>
 
-                <p className="text-gray-700 dark:text-gray-300 mb-6">
+                <p className="text-gray-700 dark:text-gray-300 mb-6 text-left">
                   Let’s connect if you’re passionate about tech, big ideas, or
                   just great coffee!
                 </p>
